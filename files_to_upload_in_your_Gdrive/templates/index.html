@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="container">
+            <ul id="best_search">
+                <li>
+                    <p>인기검색어</p>
+                </li>
+                <li>
+                    <dl class="time1" style="display: block">
+                        <dd><a class="t" href="#">
+                                <div class="num">1</div>{{data.1}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">2</div>{{data.2}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">3</div>{{data.3}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">4</div>{{data.4}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">5</div>{{data.5}}
+                            </a></dd>
+                    </dl>
+                    <dl class="time2" style="display:none;">
+                        <dd><a class="t" href="#">
+                                <div class="num">6</div>{{data.6}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">7</div>{{data.7}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">8</div>{{data.8}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">9</div>{{data.9}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">10</div>{{data.10}}
+                            </a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <a class="best_add ad1" style="cursor:pointer" onClick="javascript:view('0')">></a>
+                    <a class="best_add ad2" onClick="javascript:view('1')" style="display:none;cursor:pointer">
+                        <</a> </li> </ul> </div> </div> <script>function view(arg){
+                            $(".time1, .time2, .time3, .time4, .ad1, .ad2, .ad3, .ad4").css("display","none");
+                            if(arg=="0") {
+                            $(".time2, .ad2").css("display","block");
+                            viewcount = 1;
+                            }
+                            else if(arg=="1") {
+                            $(".time1, .ad1").css("display","block");
+                            viewcount = 0;
+                            }
+
+                            }
+                            var viewcount = 0;
+                            var rtcarousel = setInterval(function(){ view(viewcount) },5000);
+
+                            $("#best_search").mouseenter(function() {
+                            clearInterval(rtcarousel);
+                            });
+
+                            $("#best_search").mouseleave(function() {
+                            rtcarousel = setInterval(function(){ view(viewcount) },5000);
+                            });
+                            </script>
+</body>
+
+</html>
