@@ -6,79 +6,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">    
+    <title>Everytime Hot 10</title>
 </head>
-
 <body>
+  
     <div id="wrap">
         <div class="container">
             <ul id="best_search">
                 <li>
-                    <p>인기검색어</p>
-                </li>
-                <li>
-                    <dl class="time1" style="display: block">
+                    <img src="{{ url_for('static', filename='everytime.png') }}" style="margin-left: auto; margin-right: auto; display: block;"/>
+                    <p1>에브리타임 트렌드</p1>
+                    <br><br><br><br>
+                    <p>인사캠 인기단어</p>
+                    <dl class="time1" >
                         <dd><a class="t" href="#">
-                                <div class="num">1</div>{{data.1}}
+                                <div class="num">1</div>{{data_insa.1}}
                             </a></dd>
                         <dd><a class="t" href="#">
-                                <div class="num">2</div>{{data.2}}
+                                <div class="num">2</div>{{data_insa.2}}
                             </a></dd>
                         <dd><a class="t" href="#">
-                                <div class="num">3</div>{{data.3}}
+                                <div class="num">3</div>{{data_insa.3}}
                             </a></dd>
                         <dd><a class="t" href="#">
-                                <div class="num">4</div>{{data.4}}
+                                <div class="num">4</div>{{data_insa.4}}
                             </a></dd>
                         <dd><a class="t" href="#">
-                                <div class="num">5</div>{{data.5}}
+                                <div class="num">5</div>{{data_insa.5}}
+                            </a></dd>
+                        <br>
+                        <dd><a class="t" href="#">
+                                <div class="num">6</div>{{data_insa.6}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">7</div>{{data_insa.7}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">8</div>{{data_insa.8}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">9</div>{{data_insa.9}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">10</div>{{data_insa.10}}
                             </a></dd>
                     </dl>
-                    <dl class="time2" style="display:none;">
+                </li>
+                <br><br><br><br><br><br>
+                <li>
+                    <p>자과캠 인기단어</p>
+                    <dl class="time1" >
                         <dd><a class="t" href="#">
-                                <div class="num">6</div>{{data.6}}
+                                <div class="num">1</div>{{data_jagwa.1}}
                             </a></dd>
                         <dd><a class="t" href="#">
-                                <div class="num">7</div>{{data.7}}
+                                <div class="num">2</div>{{data_jagwa.2}}
                             </a></dd>
                         <dd><a class="t" href="#">
-                                <div class="num">8</div>{{data.8}}
+                                <div class="num">3</div>{{data_jagwa.3}}
                             </a></dd>
                         <dd><a class="t" href="#">
-                                <div class="num">9</div>{{data.9}}
+                                <div class="num">4</div>{{data_jagwa.4}}
                             </a></dd>
                         <dd><a class="t" href="#">
-                                <div class="num">10</div>{{data.10}}
+                                <div class="num">5</div>{{data_jagwa.5}}
+                            </a></dd>
+                        <br>
+                        <dd><a class="t" href="#">
+                                <div class="num">6</div>{{data_jagwa.6}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">7</div>{{data_jagwa.7}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">8</div>{{data_jagwa.8}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">9</div>{{data_jagwa.9}}
+                            </a></dd>
+                        <dd><a class="t" href="#">
+                                <div class="num">10</div>{{data_jagwa.10}}
                             </a></dd>
                     </dl>
                 </li>
-                <li>
-                    <a class="best_add ad1" style="cursor:pointer" onClick="javascript:view('0')">></a>
-                    <a class="best_add ad2" onClick="javascript:view('1')" style="display:none;cursor:pointer">
-                        <</a> </li> </ul> </div> </div> <script>function view(arg){
-                            $(".time1, .time2, .time3, .time4, .ad1, .ad2, .ad3, .ad4").css("display","none");
-                            if(arg=="0") {
-                            $(".time2, .ad2").css("display","block");
-                            viewcount = 1;
-                            }
-                            else if(arg=="1") {
-                            $(".time1, .ad1").css("display","block");
-                            viewcount = 0;
-                            }
-
-                            }
-                            var viewcount = 0;
-                            var rtcarousel = setInterval(function(){ view(viewcount) },5000);
-
-                            $("#best_search").mouseenter(function() {
-                            clearInterval(rtcarousel);
-                            });
-
-                            $("#best_search").mouseleave(function() {
-                            rtcarousel = setInterval(function(){ view(viewcount) },5000);
-                            });
-                            </script>
+            </ul> 
+      </div> </div>
 </body>
 
 </html>
